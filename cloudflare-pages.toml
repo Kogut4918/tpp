@@ -1,0 +1,25 @@
+# Configuração de implantação para Cloudflare Pages
+
+# Configurações de build
+[build]
+  command = "npm run build"
+  publish = ".next/static"
+
+# Configurações de ambiente
+[build.environment]
+  NODE_VERSION = "18"
+
+# Configurações de domínio personalizado
+[site]
+  domain = "app.tppprotese.com.br"
+
+# Configurações do banco de dados D1
+[[d1_databases]]
+binding = "DB"
+database_name = "tpp-db"
+database_id = "tpp-production"
+
+# Configurações de variáveis de ambiente
+[env]
+  NEXT_PUBLIC_APP_URL = "https://app.tppprotese.com.br"
+  NEXT_PUBLIC_API_URL = "https://app.tppprotese.com.br/api"
